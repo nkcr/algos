@@ -2,6 +2,11 @@
 
 require 'benchmark'
 
+# Purpose
+# -------
+# simple algo for binary search
+
+
 # that one loops forever if not found
 def bs1 (array, find)
 	left = 0
@@ -19,7 +24,7 @@ def bs1 (array, find)
 end
 
 
-# that one loops forever if not found
+# that one is the correct one
 def bs2 (array, find)
 	left = 0
 	right = array.length-1
