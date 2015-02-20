@@ -31,7 +31,12 @@ decrypted = shift(-3, crypted)
 p crypted + " | " + decrypted
 
 
-
+# substitute based on a repeated key
+# params :
+# - key (String) the key (will be repeated if needed)
+# - string (String) the string to be crypted
+# return :
+# - (String) the crypted string
 def key_crypt(key,string)
 	alphabet = ('a'..'z').to_a
 	keys = key.chars
@@ -47,3 +52,6 @@ def key_crypt(key,string)
 end
 # test
 p key_crypt("dddddddaaaaaaa","ce message est crypté")
+
+
+
