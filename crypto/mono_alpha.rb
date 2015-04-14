@@ -55,7 +55,7 @@ module MonoAlpha
 		a = string.chars.each_with_index.map { |c,i| matrix[ [indexes[keys[i%keys.length]],indexes[c]] ] }.join
 	end
 	# @test
-	##p key_crypt("dddddddaaaaaaa","ce message est crypté")
+	p key_crypt("crypto","toutestperdu")
 
 end
 

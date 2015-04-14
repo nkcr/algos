@@ -1,14 +1,13 @@
 #! /usr/bin/ruby
 
-# Purpose
-# -------
-# calculate a letter frequency
+# Purpose :
+# - calculate a letter frequency
 
 module Frequency
 	extend self
 
 	# Calculates the relativ frequency of a letter in a sentence
-	# it is done by dividing the number of occurence by the number of letter
+	# it is done by dividing the number of occurence by the number of letter  
 	# params :
 	# - string (String) the sentence
 	# - char (String) the letter
@@ -21,7 +20,7 @@ module Frequency
 	##p frequency("hello","l")
 
 	# calculates k Friedman coef of 2 sentences of same length
-	# if the second string is longer it's okay, takes the length of the first string
+	# if the second string is longer it's okay, takes the length of the first string  
 	# params :
 	# - string1 (String) the first sentence
 	# - string2 (String) the second sentence
@@ -38,7 +37,7 @@ module Frequency
 	##p friedman("abcd","abcg")
 
 	# calculates Kullback coef of a given string
-	# it is done by making friedman of each sentence shifted, divided by the length
+	# it is done by making friedman of each sentence shifted, divided by the length  
 	# params :
 	# - string (String) the string
 	# return :

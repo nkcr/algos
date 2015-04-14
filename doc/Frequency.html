@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Frequency - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script src="./js/jquery.js"></script>
+<script src="./js/darkfish.js"></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-frequency">#frequency</a>
+    
+    <li ><a href="#method-i-friedman">#friedman</a>
+    
+    <li ><a href="#method-i-kullback">#kullback</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Frequency">
+  <h1 id="module-Frequency" class="module">
+    module Frequency
+  </h1>
+
+  <section class="description">
+    
+<p>Purpose :</p>
+<ul><li>
+<p>calculate a letter frequency</p>
+</li></ul>
+
+  </section>
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-frequency" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">frequency</span><span
+            class="method-args">(string,char)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calculates the relativ frequency of a letter in a sentence it is done by
+dividing the number of occurence by the number of letter</p>
+
+<p>params :</p>
+<ul><li>
+<p>string (String) the sentence</p>
+</li><li>
+<p>char (String) the letter</p>
+</li></ul>
+
+<p>return :</p>
+<ul><li>
+<p>the frequency</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="frequency-source">
+            <pre><span class="ruby-comment"># File crypto/frequency.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">frequency</span>(<span class="ruby-identifier">string</span>,<span class="ruby-identifier">char</span>)
+        <span class="ruby-identifier">string</span>.<span class="ruby-identifier">count</span>(<span class="ruby-identifier">char</span>) <span class="ruby-operator">/</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">length</span>.<span class="ruby-identifier">to_f</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-friedman" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">friedman</span><span
+            class="method-args">(string1,string2)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>calculates k Friedman coef of 2 sentences of same length if the second
+string is longer it&#39;s okay, takes the length of the first string</p>
+
+<p>params :</p>
+<ul><li>
+<p>string1 (String) the first sentence</p>
+</li><li>
+<p>string2 (String) the second sentence</p>
+</li></ul>
+
+<p>return :</p>
+<ul><li>
+<p>the coeff</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="friedman-source">
+            <pre><span class="ruby-comment"># File crypto/frequency.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">friedman</span>(<span class="ruby-identifier">string1</span>,<span class="ruby-identifier">string2</span>)
+        <span class="ruby-identifier">j</span> = <span class="ruby-value">0.0</span>
+        <span class="ruby-identifier">string1</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">char1</span>,<span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">j</span> <span class="ruby-operator">+=</span> ((<span class="ruby-identifier">char1</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">string2</span>[<span class="ruby-identifier">i</span>])<span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-value">0</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">j</span> <span class="ruby-operator">/</span> (<span class="ruby-identifier">string1</span>.<span class="ruby-identifier">length</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-kullback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">kullback</span><span
+            class="method-args">(string)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>calculates Kullback coef of a given string it is done by making friedman of
+each sentence shifted, divided by the length</p>
+
+<p>params :</p>
+<ul><li>
+<p>string (String) the string</p>
+</li></ul>
+
+<p>return :</p>
+<ul><li>
+<p>the coef</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="kullback-source">
+            <pre><span class="ruby-comment"># File crypto/frequency.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">kullback</span>(<span class="ruby-identifier">string</span>)
+        <span class="ruby-identifier">j</span> = <span class="ruby-value">0.0</span>
+        (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">string</span>.<span class="ruby-identifier">length</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">j</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">friedman</span>(<span class="ruby-identifier">string</span>,<span class="ruby-identifier">string</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">string</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>])
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">j</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://docs.seattlerb.org/rdoc/">RDoc</a> 4.2.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
