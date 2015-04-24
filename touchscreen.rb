@@ -9,8 +9,10 @@
 # - new_x(x,y) = Ax + By + C
 # - new_y(x,y) = Dx + Ey + F
 # Params :
-# - x0,y0,...x2,y2 (number) coordinates of calibration points
-# - a0,b0,...a2,b2 (numner) actual coordinates received
+# - x0,y0,...x2,y2 (number) coordinates of the 3 calibration points
+# - a0,b0,...a2,b2 (numner) actual coordinates received (3 points)
+# Return :
+# - an array containing A,B,C,D,E,F factors needed for the 2 transform functions
 def three_calibration(
       x0,y0,x1,y1,x2,y2,
       a0,b0,a1,b1,a2,b2
