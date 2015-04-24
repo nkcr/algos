@@ -7,4 +7,4 @@
 * Numerical number representation
 * Touchscreen calibration
 
-Files should be self-explained with some outputs test, use `ruby <file.rb>` to run.
+Files should be self-explained with some output tests, use `ruby <file.rb>` to run.

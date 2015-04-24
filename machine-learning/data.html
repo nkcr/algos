@@ -1,0 +1,54 @@
+<html lang='en'>
+<head>
+  <title>Nyaplot</title>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.14/require.min.js"></script>
+  <script>if(window['d3'] === undefined ||
+   window['Nyaplot'] === undefined){
+    var path = {"d3":"http://d3js.org/d3.v3.min"};
+
+
+
+    var shim = {"d3":{"exports":"d3"}};
+
+    require.config({paths: path, shim:shim});
+
+
+require(['d3'], function(d3){window['d3']=d3;console.log('finished loading d3');
+
+	var script = d3.select("head")
+	    .append("script")
+	    .attr("src", "https://rawgit.com/domitry/Nyaplotjs/master/release/nyaplot.js")
+	    .attr("async", true);
+
+	script[0][0].onload = script[0][0].onreadystatechange = function(){
+
+
+	    var event = document.createEvent("HTMLEvents");
+	    event.initEvent("load_nyaplot",false,false);
+	    window.dispatchEvent(event);
+	    console.log('Finished loading Nyaplotjs');
+
+	};
+
+
+});
+}
+</script>
+</head>
+<body><div id='vis-c7acd689-bf62-4d27-897c-b34d2ebf6f1c'></div>
+<script>
+(function(){
+    var render = function(){
+        var model = {"panes":[{"diagrams":[{"type":"scatter","options":{"x":"x","y":"y"},"data":"2bd89009-178d-4b32-b047-13e696284c6c"}],"options":{"zoom":true,"width":700,"xrange":[2,20],"yrange":[6,20]}}],"data":{"2bd89009-178d-4b32-b047-13e696284c6c":[{"x":20,"y":8},{"x":15,"y":20},{"x":16,"y":10},{"x":5,"y":15},{"x":16,"y":6},{"x":2,"y":20}]},"extension":[]}
+        Nyaplot.core.parse(model, '#vis-c7acd689-bf62-4d27-897c-b34d2ebf6f1c');
+    };
+    if(window['Nyaplot']==undefined){
+        window.addEventListener('load_nyaplot', render, false);
+	return;
+    } else {
+       render();
+    }
+})();
+</script>
+</body>
+</html>
