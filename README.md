@@ -1,9 +1,8 @@
-algos
-=====
+# Algos
 
-## Levenshtein
-
-Compute distance between two words
-
-    $ chmod +x levenshtein
-    $ ruby levenshtein
+* Bezier
+* Levenshtein
+* Descision tree (mini mak)
+* Drypto stuff
+* Dumerical number representation
+* Touchscreen calibration

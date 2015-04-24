@@ -2,6 +2,15 @@
 
 require 'benchmark'
 
+# Purpose
+# -------
+# Compute levenstein distance
+
+# This is a standard way to compute lenvenstein distance over
+# two words
+# Params:
+# - word1 (string) first word
+# - word2 (strong) second word
 def lev_distance(word1, word2)
 	# Note : i for row, j for colomn
 	# init 2D array with default (0,1,2,...)
@@ -26,6 +35,11 @@ def lev_distance(word1, word2)
 	return a[ [word2.length,word1.length] ]
 end
 
+# This is a more advanced way to compute lenvenstein distance over
+# two words
+# Params:
+# - word1 (string) first word
+# - word2 (strong) second word
 def best_lev_distance(word1, word2)
 	# Note : i for row, j for colomn
 	# init 2D array with default (0,1,2,...)

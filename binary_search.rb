@@ -42,7 +42,7 @@ def bs2 (array, find)
 end
 
 
-
+# @test
 n = 10
 size = 9999999
 array = []

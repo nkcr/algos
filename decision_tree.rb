@@ -2,7 +2,7 @@
 
 # Purpose :
 # - solving game descision problems like minimax and alpha/beta
-# Concept :  
+# Concept :
 # def mini_max(is_player_a, game_world)
 # 	if at the end of the game
 # 		return expected(game_world)
@@ -19,3 +19,7 @@
 # end
 def mini_max
 end
+
+###############
+# PSEUDO-CODE #
+###############

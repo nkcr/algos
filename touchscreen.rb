@@ -2,17 +2,22 @@
 
 # Purpose
 # -------
-# Provide method to calibrate a touchscreen
+# Provide method helper to calibrate a touchscreen
 
-# Perform a three point calibration
+# Return factors for the transform equation of a three-point calibration.
+# Transform equation is in form :
+# - new_x(x,y) = Ax + By + C
+# - new_y(x,y) = Dx + Ey + F
 # Params :
-# x0,y0,...x2,y2 (number) coordinates of expected points
-# a0,b0,...a2,b2 (numner) actual coordinates
+# - x0,y0,...x2,y2 (number) coordinates of calibration points
+# - a0,b0,...a2,b2 (numner) actual coordinates received
 def three_calibration(
       x0,y0,x1,y1,x2,y2,
       a0,b0,a1,b1,a2,b2
     )
+  # those are the result of matrix computation
   fraction = 1/(a0*b1-a0*b2-a1*b0+a1*b2+a2*b0-a2*b1).to_f
+
   a = fraction * (-x1*b0+x2*b0+x0*b1-x2*b1-x0*b2+x1*b2)
   b = fraction * (x1*a0-x2*a0-x0*a1+x2*a1+x0*a2-x1*a2)
   c = fraction * (-x2*a1*b0+x1*a2*b0+x2*a0*b1-x0*a2*b1-x1*a0*b2+x0*a1*b2)
@@ -23,4 +28,5 @@ def three_calibration(
   return [a,b,c,d,e,f]
 end
 
+# @test
 p three_calibration(65,350,200,195,195,550,650,2000,2800,1350,2640,3500)
