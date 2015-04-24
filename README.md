@@ -2,7 +2,9 @@
 
 * Bezier
 * Levenshtein
-* Descision tree (mini mak)
-* Drypto stuff
-* Dumerical number representation
+* Descision tree (mini max)
+* Crypto stuff
+* Numerical number representation
 * Touchscreen calibration
+
+Files should be self-explained with some outputs test, use `ruby <file.rb>` to run.
